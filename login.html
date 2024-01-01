@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+   
+    <title>Document</title>
+</head>
+
+<body class="bg-black zoom-background">
+    <div class="-mt-3" id="header" style="background-image: url('./or mi.png'); height:550px;">
+        <header>
+            <div class="flex m-3">
+                <a href="./index.html"
+                    class="mt-2 ml-28 sm:ml-2 font-mono font-semibold drop-shadow-md shadow-slate-900 text-2xl text-white">
+                    TECHFEST
+                </a>
+                <div class="absolute right-10 space-x-0  lg:space-x-14 mt-14 sm:mt-2 mr-2">
+                    <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+                    <a href="./games.html"
+                        class="text-gray-300 hover:border-double  hover:border-2 hover:text-white rounded-md px-3 py-2 text-lg font-medium">Games</a>
+                    <a href="./vission.html"
+                        class="text-gray-300 hover:border-double  hover:border-2 hover:text-white rounded-md px-3 py-2 text-lg font-medium">Vision</a>
+                    <a href="#"
+                        class="text-gray-300 hover:border-double  hover:border-2 hover:text-white rounded-md px-3 py-2 text-lg font-medium">Programs</a>
+                </div>
+            </div>
+        </header>
+        <div class="flex flex-col items-center sm:items-start sm:m-10 justify-center ">
+            <p class="text-2xl font-bold font-mono drop-shadow-2xl mt-20 ml-5  sm:text-3xl lg:text-5xl text-white">
+                Get Started
+            </p>
+            <p class="text-md font-light ml-5 sm:w-4/6 sm:ml-10 mt-5 lg:-ml-56 text-center text-2xl text-white">
+                Let’s registered or login to participate in Games
+            </p>
+        </div>
+    </div>
+    <div class="-mt-20 mr-14 mb-20 bg-gray-950 flex border w-11/12  " style="height: 610px; margin-left: 5%;">
+        <div class=" border-r hidden sm:block sm:w-6/12 ">
+            <p class="text-slate-500 ml-5 mt-16 text-sm mr-40 text-wrap lg:w-6/12 lg:ml-40 lg:mr-32 lg:mt-32 w-10/12">
+                I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or
+                double click me to add your own content and make changes to the font. Feel free to drag and drop me
+                anywhere you like on your page. I’m a great place for you to tell a story and let your users know a
+                little more about you.</p>
+            <p class="text-slate-500 ml-5 mt-16 text-sm lg:w-6/12 lg:ml-40 lg:mr-32 lg:mt-10 text-wrap w-10/12">
+                This is a great space to write a long text about your company and your services. You can use this
+                space to go into a little more detail about your company. Talk about your team and what services you
+                provide. Tell your visitors the story of how you came up with the idea for your business and what
+                makes you different from your competitors. Make your company stand out and show your visitors who
+                you are.</p>
+
+
+        </div>
+        <div class=" border-r scroll md:w-6/12 " id="loginSection">
+            <!-- Login Section -->
+            <p class="text-white text-4xl  mt-16 text-center "> Login </p>
+            <div>
+                <input type="text" placeholder="Username" class="w-9/12 h-14 border lg:ml-20 md:ml-10 bg-black pl-10  mt-28 ml-10   ">
+                <input type="password" placeholder="Password" class="w-9/12 h-14 border md:ml-10 lg:ml-20 bg-black pl-10  mt-5 ml-10"> <br>
+                <button
+                    class="text-green-700 border border-green-900 h-14 w-9/12 ml-10 mt-5 md:ml-10 lg:ml-20  hover:bg-green-700 hover:text-white hover:border-green-950 hover:border-2">Submit</button>
+            </div>
+            <p class="text-gray-500 text-xl ml-8 md:ml-10 mt-10 lg:ml-52"> Don't have an account, <a href="#" class="hover:text-white"
+                    id="showSignup"> Register </a></p>
+        </div>
+        <div id="signupSection" class="scroll w-9/12 " style="display: none;">
+            <!-- Signup Section -->
+            <p class="text-white text-4xl  mt-3 text-center "> Sign Up </p>
+            <div>
+                <div class="md:flex">
+                    <input type="text" placeholder="Name"
+                        class="w-11/12 h-14  border bg-black pl-10 text-white mt-6 md:mt-12 ml-12 md:ml-5   ">
+                    <input type="text" placeholder="Surname"
+                        class="w-11/12 h-14 border bg-black pl-10 text-white mt-5 ml-12 md:mt-12 md:ml-5 md:mr-5">
+                </div>
+                <div class="md:flex">
+                    <input type="text" placeholder="Department"
+                        class="w-11/12 h-14 border bg-black pl-10 text-white mt-5 ml-12  md:ml-5 ">
+                    <input type="text" placeholder="Batch"
+                        class="w-11/12 h-14 border bg-black pl-10 text-white mt-5 ml-12 md:ml-5 md:mr-5">
+                </div>
+                <div class="md:flex">
+                    <input type="text" placeholder="Roll No"
+                        class="w-11/12 h-14 border bg-black pl-10 text-white mt-5 ml-12 md:ml-5 ">
+                    <input type="text" placeholder="Mobile No"
+                        class="w-11/12 h-14 border bg-black pl-10 text-white mt-5 ml-12  md:ml-5 md:mr-5">
+                </div>
+                <input type="text" placeholder="Email Id" class=" h-14 border w-11/12 md:ml-5 bg-black pl-10 text-white mt-5 lg:ml-9 ml-12  "
+                  ><br>
+                <button
+                    class="text-green-700 border border-green-900 h-14 w-11/12 mt-10 ml-12  md:ml-5 lg:ml-10 hover:bg-green-700 hover:text-white hover:border-green-950 hover:border-2">Submit</button>
+            </div>
+            <p class="text-gray-500 text-xl ml-5 md:ml-20 mt-10 w-80 lg:ml-72"> Already have an account, <a href="#" class="hover:text-white"
+                    id="showLogin"> Login </a></p>
+        </div>
+    </div>
+    <br>
+    <hr class="mt-32">
+    <footer class="h-96 flex-wrap lg:flex ">2
+        <div class="flex-wrap mt-20 ml-5 xl:ml-20 sm:ml-10">
+            <p class="text-white text-xl sm:text-3xl lg:text-4xl font-mono">TECHFEST</p>
+            <p class="text-gray-500 mt-5">+91 00000 00000</p>
+            <p class="text-gray-500">XYZ@gmail.com </p>
+            <p class="text-gray-500">KBP College </p>
+            <p class="text-gray-500">Vashi , Navi-Mumbai</p>
+        </div>
+        <div class="-mt-36 ml-60 lg:mt-20 xl:ml-52 lg:ml-44 sm:ml-80 block ">
+            <a href="#"
+                class="text-gray-500 hover:border-double  hover:border-2 hover:text-white rounded-md px-3 py-2 text-lg font-medium">Games</a>
+            <br> <br> <a href="./vission.html"
+                class="text-gray-500  hover:border-double  hover:border-2 hover:text-white rounded-md px-3 py-2 text-lg font-medium">Vision</a>
+            <br> <br><a href="#"
+                class="text-gray-500 hover:border-double  hover:border-2 hover:text-white rounded-md px-3 py-2 text-lg font-medium">Programs</a>
+            <br> <button
+                class="absolute  text-gray-500 mt-5 ml-3 border-gray-500 border-double border-2 hover:text-gray-200 rounded-md px-3 py-2 text-md font-medium"><a
+                    href="./login.html"> Login</a></button>
+
+        </div>
+        <div class="mt-28 ml-5 sm:ml-96 sm:-mt-36 sm:pl-28 lg:mt-16 xl:ml-28 lg:ml-14">
+            <p class="text-gray-500 mt-5">To Contact Us Send Your Email :</p>
+            <input
+                class="text-gray-500 mt-5  h-12 w-64 bg-black border-gray-500 border-double border-2 hover:text-gray-200 rounded-md px-3 py-2 text-md font-medium"
+                type="email" name="Email" id="Email" placeholder="Email"><br>
+            <button
+                class="absolute  text-gray-500 mt-5 w-28 h-12 border-gray-500 border-double border-2 hover:border-gray-200 hover:text-gray-200 rounded-md px-3 py-2 text-md font-medium">Submit</button>
+        </div>
+        <div class="mt-28 ml-20 flex sm:mt-32 sm:ml-72 sm:flex lg:mt-16 lg:block  lg:ml-40  xl:ml-56  ">
+            <p class="text-gray-500 mt-5 sm:pr-4 sm:text-xl ">Follw Us On :</p>
+            <div class="flex space-x-3 mt-5">
+                <img src="./facebook.png" alt="" style="height: 30px; ">
+                <img src="./instagram.png" alt="" style="height: 33px;">
+                <img src="./twitter.png" alt="" style="height: 32px;">
+            </div>
+        </div>
+    </footer>
+  <!-- ... (your existing code) ... -->
+
+<script>
+    document.getElementById('showSignup').addEventListener('click', function () {
+        document.getElementById('loginSection').style.display = 'none';
+        document.getElementById('signupSection').style.display = 'block';
+        document.getElementById('signupSection').scrollIntoView({ behavior: 'smooth' });
+    });
+
+    document.getElementById('showLogin').addEventListener('click', function () {
+        document.getElementById('signupSection').style.display = 'none';
+        document.getElementById('loginSection').style.display = 'block';
+        document.getElementById('loginSection').scrollIntoView({ behavior: 'smooth' });
+    });
+</script>
+
+<!-- ... (your existing code) ... -->
+
+</body>
+
+</html>

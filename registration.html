@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+</head>
+<body class="w-full bg-black backdrop-blur-md zoom-background " style="background-image: url('./desktop-wallpaper-technology-ultra-technology.jpg'); height:1100px;">
+            <header>
+        <div class="mt-5 text-center">
+            <a href="./index.html"
+                class="mt-2 font-mono font-semibold drop-shadow-md shadow-slate-900 text-2xl text-white">
+                TECHFEST
+        </a>
+        </div>
+        </header>
+
+        <main class="border backdrop-blur-sm  border-white w-11/12 ml-10 md:ml-14 mt-20"style="background-image: url('./colorful-dark-abstract-polygon-3d-4k-39.jpg'); height:1100px;">
+<p class="text-white font-mono font-bold text-3xl text-center ">Registration Form
+</p>          
+<form id="registrationForm" class="flex flex-col items-center">
+    <input type="text" id="name" class="w-11/12 h-14 border-2 bg-transparent hover:bg-white pl-10 text-gray-400  hover:text-black mt-6 md:mt-12  md:ml-5" name="name" required placeholder="Name">
+    <input type="text" id="surname" class="w-11/12 h-14 border-2 bg-transparent hover:bg-white pl-10  text-gray-400  hover:text-black mt-6 md:mt-12  md:ml-5" name="surname" required placeholder="Surname">
+    
+    <input type="text" id="department" class="w-11/12 h-14 bg-transparent border-2 hover:bg-white pl-10  text-gray-400 hover:text-black mt-6 md:mt-12  md:ml-5" name="department" required placeholder="Department">
+    <input type="text" id="batch" class="w-11/12 h-14 border-2 bg-transparent hover:bg-white pl-10  text-gray-400 hover:text-black mt-6 md:mt-12  md:ml-5" name="batch" required placeholder="Batch">
+    <input type="text" id="rollNo" class="w-11/12 h-14 border-2 bg-transparent hover:bg-white pl-10  text-gray-400 hover:text-black mt-6 md:mt-12  md:ml-5" name="rollNo" required placeholder="Roll Number">
+    
+    <select id="game" class="w-11/12 h-14 border-2 hover:border-white focus:outline-none focus:ring pl-10 focus:border-blue-300 hover:bg-white bg-transparent text-gray-400 hover:text-black mt-6 md:mt-12 md:ml-5 rounded-md" name="game" onchange="updateParticipants()">
+      <option value="none" class="text-gray-400">Select a Game</option>
+      <option value="bgmi">BGMI-(TDM)</option>
+      <option value="coding">Coding and Debugging</option>
+      <option value="photography">Photography</option>
+      <option value="boxCricket">Box Cricket</option>
+      <option value="guessMovie">Guess the Movie</option>
+      <option value="quiz">Quiz</option>
+      <option value="snakeLadder">Snake and Ladder</option>
+    </select>
+  
+    <div id="participantsSection" class="w-11/12 mt-6 bg-transparent  pl-10  " style="display: none;">
+      <label for="participants" class="text-white">Number of Participants:</label>
+      <select id="participants" name="participants" class="w-full h-14 border-2 hover:bg-white pl-10 text-gray-400 hover:text-black ">
+      </select>
+    </div>
+  
+    <label for="fee" class="text-white mt-6 bg-transparent md:mt-12  md:ml-5">Registration Fee:</label>
+    <input type="text" id="fee" name="fee" class="w-11/12 h-14 border-2 bg-transparent hover:bg-white pl-10 text-gray-400 hover:text-black mt-6 md:mt-12  md:ml-5" readonly placeholder="Registration fees">
+    
+    <button type="submit" class="w-11/12 h-14 border-2 bg-black text-white mt-6 md:mt-12  md:ml-5"><a href="./payement.html ">Submit to make Payment</a></button>
+  </form>
+              
+        </main>
+
+        <footer class="h-96 flex-wrap lg:flex ">
+            <div class="flex-wrap mt-20 ml-5 xl:ml-20 sm:ml-10">
+                <p class="text-white text-xl sm:text-3xl lg:text-4xl font-mono">TECHFEST</p>
+                <p class="text-gray-500 mt-5">+91 00000 00000</p>
+                <p class="text-gray-500">XYZ@gmail.com </p>
+                <p class="text-gray-500">KBP College </p>
+                <p class="text-gray-500">Vashi , Navi-Mumbai</p>
+            </div>
+            <div class="-mt-36 ml-60 lg:mt-20 xl:ml-52 lg:ml-44 sm:ml-80 block ">
+                <a href="#"
+                    class="text-gray-500 hover:border-double  hover:border-2 hover:text-white rounded-md px-3 py-2 text-lg font-medium">Games</a>
+                <br> <br> <a href="./vission.html"
+                    class="text-gray-500  hover:border-double  hover:border-2 hover:text-white rounded-md px-3 py-2 text-lg font-medium">Vision</a>
+                <br> <br><a href="#"
+                    class="text-gray-500 hover:border-double  hover:border-2 hover:text-white rounded-md px-3 py-2 text-lg font-medium">Programs</a>
+                <br> <button
+                    class="absolute  text-gray-500 mt-5 ml-3 border-gray-500 border-double border-2 hover:text-gray-200 rounded-md px-3 py-2 w-20 text-md font-medium"><a
+                        href="./login.html"> Login</a></button>
+    
+            </div>
+            <div class="mt-28 ml-5 sm:ml-96 sm:-mt-36 sm:pl-28 lg:mt-16 xl:ml-28 lg:ml-14">
+                <p class="text-gray-500 mt-5">To Contact Us Send Your Email :</p>
+                <input
+                    class="text-gray-500 mt-5  h-12 w-64 bg-black border-gray-500 border-double border-2 hover:text-gray-200 rounded-md px-3 py-2 text-md font-medium"
+                    type="email" name="Email" id="Email" placeholder="Email"><br>
+                <button
+                    class="absolute  text-gray-500 mt-5 w-28 h-12 border-gray-500 border-double border-2 hover:border-gray-200 hover:text-gray-200 rounded-md px-3 py-2 text-md font-medium">Submit</button>
+            </div>
+            <div class="mt-28 ml-20 flex sm:mt-32 sm:ml-72 sm:flex lg:mt-16 lg:block  lg:ml-40  xl:ml-56  ">
+                <p class="text-gray-500 mt-5 mb-10 sm:pr-4 sm:text-xl mr-3">Follw Us On :</p>
+                <div class="flex space-x-3 mb-10 mt-5">
+                    <img src="./facebook.png" alt="" style="height: 30px; ">
+                    <img src="./instagram.png" alt="" style="height: 33px;">
+                    <img src="./twitter.png" alt="" style="height: 32px;">
+                </div>
+            </div>
+        </footer>
+
+        <script>
+            function updateParticipants() {
+              const gameSelect = document.getElementById('game');
+              const participantsSection = document.getElementById('participantsSection');
+              const participantsSelect = document.getElementById('participants');
+              const feeInput = document.getElementById('fee');
+              const selectedGame = gameSelect.value;
+          
+              participantsSelect.innerHTML = ""; // Clear existing options
+          
+              if (selectedGame === 'bgmi' || selectedGame === 'boxCricket') {
+                participantsSection.style.display = 'block';
+                const maxParticipants = selectedGame === 'boxCricket' ? 8 : 4;
+          
+                for (let i = 1; i <= maxParticipants; i++) {
+                  const option = document.createElement('option');
+                  option.value = i;
+                  option.text = i;
+                  participantsSelect.appendChild(option);
+                }
+              } else {
+                participantsSection.style.display = 'none';
+              }
+          
+              updateFee(); // Update fee when changing the number of participants options
+            }
+          
+            function updateFee() {
+              const gameSelect = document.getElementById('game');
+              const participantsSelect = document.getElementById('participants');
+              const feeInput = document.getElementById('fee');
+            
+              const game = gameSelect.value;
+              const participants = participantsSelect.value;
+              let fee = 0;
+            
+              switch (game) {
+                case 'bgmi':
+                  fee = 50 
+                  break;
+                case 'coding':
+                case 'photography':
+                case 'quiz':
+                case 'snakeLadder':
+                  fee = 50 ;
+                  break;
+                case 'boxCricket':
+                  fee = 200 ;
+                  break;
+                case 'guessMovie':
+                  fee = 30 ;
+                  break;
+                default:
+                  fee = 0;
+              }
+            
+              feeInput.value = `Rs. ${fee}`;
+            }
+          
+           // document.getElementById('registrationForm').addEventListener('submit', function (event) {
+             // event.preventDefault();
+             // alert('Form submitted!'); // You can replace this with your own form submission logic
+            //});
+          </script>
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Professional Admin Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-black">
+  
+
+  <!-- Navigation (Top Bar for Small Screens) -->
+  <div id="top-nav" class=" bg-black  md:w-full lg:w-8/12 lg:ml-60 text-white p-4">
+    <div class="flex justify-between  items-center">
+      <div>Admin Dashboard</div>
+      <div id="open-slide-bar" class="cursor-pointer text-2xl" onclick="toggleSlideBar()">&#9776;</div>
+    </div>
+    <!-- Dropdown menu for small screens -->
+    <div id="dropdown-menu" class="hidden  mt-2">
+      <a href="#dashboard" onclick="scrollToSection('profile-panel')" class="block px-4 py-2 hover:bg-gray-700">Dashboard</a>
+      <a href="./admin_game.html" class="block px-4 py-2 hover:bg-gray-700">Games</a>
+      <a href="./admin_setting.html" class="block px-4 py-2 hover:bg-gray-700">Settings</a>
+      <a href="./index.html" class="block px-4 py-2 hover:bg-gray-700">Logout</a>
+    </div>
+  </div>
+  <!-- Slide Bar (Sidebar for Larger Screens) -->
+  <div id="slide-bar" class="hidden  bg-gray-800 text-white h-screen w-64 fixed top-0 left-0 overflow-x-hidden transform -translate-x-full md:translate-x-0 transition-transform">
+   
+    <a href="#" onclick="toggleSlideBar()" class="cursor-pointer text-2xl ml-5 mt-10">&#9776;</a>
+    <a href="#dashboard" onclick="scrollToSection('profile-panel')" class="block px-4 py-2 mt-4 hover:bg-gray-700">Dashboard</a>
+     <a href="./admin_game.html" class="block px-4 py-2 hover:bg-gray-700">Games</a>
+    <a href="./admin_setting.html" class="block px-4 py-2 hover-bg-gray-700">Settings</a>
+    <a href="./index.html" class="block px-4 py-2 hover:bg-gray-700">Logout</a>
+    <a href="#" onclick="toggleSlideBar()" class="block px-4 py-2 hover:bg-gray-700">Close</a>
+  </div>
+
+  <!-- Main Content -->
+  <div id="main-content" class="md:w-11/12 lg:w-8/12 lg:ml-60 md:ml-10 ">
+    <div id="profile-panel" class="p-4 pt-10 md:pt-5 bg-gradient-to-r from-green-300 to-blue-500 border text-center">
+      <!-- Admin Profile Information -->
+      <h1 class="text-3xl font-bold mb-4 font-mono text-white ">Admin Profile</h1>
+      <img class="w-2/6 md:w-1/6 mt-10" src="./blue-circle-with-man-s-head-circ-removebg-preview.png" alt="">
+      <p class="text-white text-3xl font-mono font-bold -mt-28 ml-10 md:-ml-72 ">User Name</p>
+      <!-- Add more
+         profile information as needed -->
+    </div>
+    </div>
+    <div class="mt-20 ml-10 lg:ml-64">
+    <p class="text-gray-300 text-3xl  ">Profile</p>
+    <p class="text-gray-300 text-xl mt-5 ">Date :<p id="datetime" class="text-white"></p></p>
+  <hr class="bg-gray-500 w-11/12 lg:w-9/12 mt-5">
+  </div>
+  <div class="ml-10 mt-5 lg:ml-64"  >
+    <p class="text-gray-300 text-xl ">About </p>
+    <textarea id="notification-text" class="w-10/12 lg:w-8/12 p-2 mt-2 bg-black text-white border rounded" placeholder="Enter notification"></textarea>
+    <hr class="bg-gray-500 w-11/12  mt-5 lg:w-9/12">
+  </div>
+  <div class="mt-5 ml-10 justify-between lg:flex lg:ml-64 ">
+    <p class="text-gray-300 text-3xl  ">Post</p>
+  <p class="text-red-600 text-xl lg:mr-80  mt-2">create a Post</p>
+  <hr class="bg-gray-500 w-11/12 lg:hidden mt-5 lg:w-9/12">
+</div>
+<hr class="bg-gray-500 w-11/12 hidden ml-64 mt-5 lg:block  lg:w-8/12">
+ 
+
+  <div class="text-center mb-20">
+    <p class="text-xl text-gray-300  mt-16">You Haven't Written Anything Yet</p>
+    <a href="#" class="text-xl text-gray-600  mt-4 ">Write Your First Post</a>
+  </div>
+  <hr class="bg-gray-500 w-full  mt-4">
+  <footer class="h-96 flex-wrap lg:flex ">
+    <div class="flex-wrap mt-20 ml-5 xl:ml-20 sm:ml-10">
+        <p class="text-white text-xl sm:text-3xl lg:text-4xl font-mono">TECHFEST</p>
+        <p class="text-gray-500 mt-5">+91 00000 00000</p>
+        <p class="text-gray-500">XYZ@gmail.com </p>
+        <p class="text-gray-500">KBP College </p>
+        <p class="text-gray-500">Vashi , Navi-Mumbai</p>
+    </div>
+    <div class="-mt-36 ml-60 lg:mt-20 xl:ml-52 lg:ml-44 sm:ml-80 block ">
+        <a href="#"
+            class="text-gray-500 hover:border-double  hover:border-2 hover:text-white rounded-md px-3 py-2 text-lg font-medium">Games</a>
+        <br> <br> <a href="./vission.html"
+            class="text-gray-500  hover:border-double  hover:border-2 hover:text-white rounded-md px-3 py-2 text-lg font-medium">Vision</a>
+        <br> <br><a href="#"
+            class="text-gray-500 hover:border-double  hover:border-2 hover:text-white rounded-md px-3 py-2 text-lg font-medium">Programs</a>
+        <br> <button
+            class="absolute  text-gray-500 mt-5 ml-3 border-gray-500 border-double border-2 hover:text-gray-200 rounded-md px-3 py-2 text-md font-medium"><a
+                href="./login.html"> Login</a></button>
+
+    </div>
+    <div class="mt-28 ml-5 sm:ml-96 sm:-mt-36 sm:pl-28 lg:mt-16 xl:ml-28 lg:ml-14">
+        <p class="text-gray-500 mt-5">To Contact Us Send Your Email :</p>
+        <input
+            class="text-gray-500 mt-5  h-12 w-64 bg-black border-gray-500 border-double border-2 hover:text-gray-200 rounded-md px-3 py-2 text-md font-medium"
+            type="email" name="Email" id="Email" placeholder="Email"><br>
+        <button
+            class="absolute  text-gray-500 mt-5 w-28 h-12 border-gray-500 border-double border-2 hover:border-gray-200 hover:text-gray-200 rounded-md px-3 py-2 text-md font-medium">Submit</button>
+    </div>
+    <div class="mt-28 ml-20 flex sm:mt-32 sm:ml-72 sm:flex lg:mt-16 lg:block  lg:ml-40  xl:ml-56  ">
+        <p class="text-gray-500 mt-5 sm:pr-4 sm:text-xl ">Follw Us On :</p>
+        <div class="flex space-x-3 mt-5">
+            <img src="./facebook.png" alt="" style="height: 30px; ">
+            <img src="./instagram.png" alt="" style="height: 33px;">
+            <img src="./twitter.png" alt="" style="height: 32px;">
+        </div>
+    </div>
+</footer>
+ 
+    <!-- Notification Section -->
+    <!-- <div id="notification-section" class="p-4">
+      <h2 class="text-2xl font-bold mb-4">Notifications</h2>
+      < Notification Form -->
+      <!-- <form id="notification-form" class="mb-4">
+        <textarea id="notification-text" class="w-full p-2 border rounded" placeholder="Enter notification"></textarea>
+        <button type="button" onclick="addNotification()" class="mt-2 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700">Add Notification</button>
+      </form>
+       Notification List 
+      <ul id="notification-list" class="list-disc pl-4"> -->
+        <!-- Existing notifications will be added here dynamically 
+      </ul>
+    </div>
+  </div> -->
+
+  <script>
+    // Function to add a new notification
+    function addNotification() {
+      const notificationText = document.getElementById("notification-text").value;
+      if (notificationText.trim() !== "") {
+        const notificationList = document.getElementById("notification-list");
+        const li = document.createElement("li");
+        li.textContent = notificationText;
+        notificationList.appendChild(li);
+        document.getElementById("notification-text").value = ""; // Clear the input
+      }
+    }
+
+    // Function to toggle the slide bar
+    function toggleSlideBar() {
+      const slideBar = document.getElementById("slide-bar");
+      const mainContent = document.getElementById("main-content");
+      const dropdownMenu = document.getElementById("dropdown-menu");
+
+      if (slideBar.classList.contains("md:translate-x-0")) {
+        slideBar.classList.add("-translate-x-full");
+        slideBar.classList.remove("md:translate-x-0");
+        mainContent.classList.remove("md:ml-64");
+      } else {
+        slideBar.classList.remove("-translate-x-full");
+        slideBar.classList.add("md:translate-x-0");
+        mainContent.classList.add("md:ml-10");
+      }
+
+      // Toggle dropdown menu for small screens
+      dropdownMenu.classList.toggle("hidden");
+    }
+
+    // Function to scroll to a specific section in the main content area
+    function scrollToSection(sectionId) {
+      const section = document.getElementById(sectionId);
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+    function updateDateTime() {
+      var now = new Date();
+      var date = now.toDateString();
+      var time = now.toLocaleTimeString();
+
+      var dateTimeString = date + ' ' + time;
+      document.getElementById('datetime').innerText = dateTimeString;
+  }
+
+  // Update the date and time every second
+  setInterval(updateDateTime, 1000);
+
+  // Initial call to set the date and time when the page loads
+  updateDateTime();
+  </script>
+
+</body>
+</html>

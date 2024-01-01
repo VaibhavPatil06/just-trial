@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>College Fest Admin Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-900 text-white font-mono">
+
+  <!-- Navigation (Top Bar for Small Screens) -->
+  <div id="top-nav" class="md:hidden bg-gray-800 text-white p-4">
+    <div class="flex justify-between items-center">
+      <div>Admin Dashboard</div>
+      <div id="open-slide-bar" class="cursor-pointer text-2xl" onclick="toggleSlideBar()">&#9776;</div>
+    </div>
+    <!-- Dropdown menu for small screens -->
+    <div id="dropdown-menu" class="hidden mt-2">
+      <a href="./admin_profile.html" onclick="scrollToSection('profile-panel')" class="block px-4 py-2 hover:bg-gray-700">Dashboard</a>
+      <a href="./admin_notification.html" onclick="scrollToSection('notification-panel')" class="block px-4 py-2 hover:bg-gray-700">Notifications</a>
+      <a href="#settings" onclick="scrollToSection('settings-panel')" class="block px-4 py-2 hover:bg-gray-700">Settings</a>
+      <a href="./admin_game.html" onclick="scrollToSection('game-panel')" class="block px-4 py-2 hover:bg-gray-700">Games</a>
+      <a href="./index.html" class="block px-4 py-2 hover:bg-gray-700">Logout</a>
+    </div>
+  </div>
+
+  <!-- Slide Bar (Sidebar for Larger Screens) -->
+  <div id="slide-bar" class="hidden md:block bg-gray-800 text-white h-screen w-64 fixed top-0 left-0 overflow-x-hidden transform -translate-x-full md:translate-x-0 transition-transform">
+    <a href="./admin_profile.html" onclick="scrollToSection('profile-panel')" class="block px-4 py-2 mt-4 hover:bg-gray-700">Dashboard</a>
+    <a href="./admin_notification.html" onclick="scrollToSection('notification-panel')" class="block px-4 py-2 hover:bg-gray-700">Notifications</a>
+    <a href="./" onclick="scrollToSection('settings-panel')" class="block px-4 py-2 hover:bg-gray-700">Settings</a>
+    <a href="./admin_game.html" onclick="scrollToSection('game-panel')" class="block px-4 py-2 hover:bg-gray-700">Games</a>
+    <a href="./index.html" class="block px-4 py-2 hover:bg-gray-700">Logout</a>
+  </div>
+
+  <div id="main-content" class="md:ml-64 transition-transform transform">
+    <!-- Settings Panel -->
+    <div id="settings-panel" class="p-4 bg-gray-800 border border-gray-700 rounded">
+      <h2 class="text-2xl font-bold mb-4">College Fest Settings</h2>
+
+      <!-- Fest Details -->
+      <div class="mb-4">
+        <h3 class="text-xl font-bold mb-2 text-gray-400">Fest Details:</h3>
+        <div class="flex justify-between items-center">
+          <p class="text-gray-400">Fest Name</p>
+          <input type="text" class="border text-black rounded px-2 py-1 w-1/2" placeholder="Enter fest name">
+        </div>
+        <div class="flex justify-between items-center mt-2">
+          <p class="text-gray-400">Location</p>
+          <input type="text" class="border text-black rounded px-2 py-1 w-1/2" placeholder="Enter location">
+        </div>
+      </div>
+
+      <!-- Date and Time Settings -->
+      <div class="mb-4">
+        <h3 class="text-xl font-bold mb-2 text-gray-400">Date and Time Settings:</h3>
+        <div class="flex justify-between items-center">
+          <p class="text-gray-400">Start Date</p>
+          <input type="date" class="border text-black rounded px-2 py-1">
+        </div>
+        <div class="flex justify-between items-center mt-2">
+          <p class="text-gray-400">End Date</p>
+          <input type="date" class="border text-black rounded px-2 py-1">
+        </div>
+      </div>
+
+      <!-- Ticket Settings -->
+      <div class="mb-4">
+        <h3 class="text-xl font-bold mb-2 text-gray-400">Ticket Settings:</h3>
+        <div class="flex justify-between items-center">
+          <p class="text-gray-400">Ticket Price</p>
+          <input type="number" class="border text-black rounded px-2 py-1 w-1/4" placeholder="Enter price">
+        </div>
+        <div class="flex justify-between items-center mt-2">
+          <p class="text-gray-400">Available Tickets</p>
+          <input type="number" class="border text-black rounded px-2 py-1 w-1/4" placeholder="Enter quantity">
+        </div>
+      </div>
+
+      <!-- Button to generate dummy settings data -->
+      <button onclick="saveFestSettings()" class="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700">Save Fest Settings</button>
+    </div>
+
+    <!-- ... (rest of the code) ... -->
+
+  </div>
+
+  <script>
+    // Function to save fest settings
+    function saveFestSettings() {
+      // Add your logic to save fest settings here
+      alert("Fest settings saved successfully!");
+    }
+
+    // ... (rest of the script)
+  </script>
+
+</body>
+</html>

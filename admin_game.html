@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hacker Panel Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-900 text-green-300">
+
+  <!-- Navigation (Top Bar for Small Screens) -->
+  <div id="top-nav" class="md:hidden bg-gray-800 text-white p-4">
+    <div class="flex justify-between items-center">
+      <div class="text-xl font-bold">Hacker Dashboard</div>
+      <div id="open-slide-bar" class="cursor-pointer text-2xl" onclick="toggleSlideBar()">&#9776;</div>
+    </div>
+    <!-- Dropdown menu for small screens -->
+    <div id="dropdown-menu" class="hidden mt-2">
+      <a href="./admin_profile.html" onclick="scrollToSection('profile-panel')" class="block px-4 py-2 hover:bg-gray-700">Dashboard</a>
+      <a href="./admin_notification.html" onclick="scrollToSection('notification-section')" class="block px-4 py-2 hover:bg-gray-700">Notifications</a>
+      <a href="#bgmi" onclick="scrollToSection('bgmi-section')" class="block px-4 py-2 hover:bg-gray-700">Games</a>
+      <!-- Add links for other games -->
+      <a href="./admin_setting.html" class="block px-4 py-2 hover:bg-gray-700">Settings</a>
+      <a href="./index.html" class="block px-4 py-2 hover:bg-gray-700">Logout</a>
+    </div>
+  </div>
+
+  <!-- Slide Bar (Sidebar for Larger Screens) -->
+  <div id="slide-bar" class="hidden md:block bg-gray-800 text-white h-screen w-64 fixed top-0 left-0 overflow-x-hidden transform -translate-x-full md:translate-x-0 transition-transform">
+    <a href="./admin_profile.html" onclick="scrollToSection('profile-panel')" class="block px-4 py-2 mt-4 hover:bg-gray-700">Dashboard</a>
+    <a href="./admin_notification.html" onclick="scrollToSection('notification-section')" class="block px-4 py-2 hover:bg-gray-700">Notifications</a>
+    <a href="#bgmi" onclick="scrollToSection('bgmi-section')" class="block px-4 py-2 hover:bg-gray-700">Games</a>
+    <!-- Add links for other games -->
+    <a href="./admin_setting.html" class="block px-4 py-2 hover:bg-gray-700">Settings</a>
+    <a href="./index.html" class="block px-4 py-2 hover:bg-gray-700">Logout</a>
+  </div>
+  <div id="main-content" class="md:ml-64 transition-transform transform">
+    <!-- Game Section -->
+    <div id="game-section" class="p-4">
+      <!-- Game Selection Dropdown -->
+      <h2 class="text-2xl font-bold mb-4 font-mono">Select Game</h2>
+      <select id="game-selection" class="w-1/2 p-2 border rounded mb-4 font-mono bg-gray-800 text-green-300">
+        <option value="bgmi">BGMI</option>
+        <option value="coding-debugging">Coding & Debugging</option>
+        <option value="photography">Photography</option>
+        <option value="box-cricket">Box Cricket</option>
+        <option value="snake-ladder">Snake & Ladder</option>
+        <option value="guess-the-movie">Guess the Movie</option>
+        <option value="quiz">Quiz</option>
+      </select>
+  
+      <!-- Display Number of Participants -->
+      <p id="participants-info" class="mb-4 font-mono">Number of Participants: <span id="participants-count"></span></p>
+  
+      <!---- Participants Table -->
+<div class="flex">
+  <div class="w-full p-2 border rounded font-mono">
+    <p class="font-bold text-green-300 font-mono">Participants</p>
+    <div id="participants-list" class="md:flex   justify-between">
+      <div class="participant flex cursor-pointer bg-gray-800" onclick="showGameLevels(1)" id="participant-1">
+        <div class="name hover:bg-gray-700 transition duration-300  px-2 py-1 rounded">John Doe</div>
+        <div class="rollno hover:bg-gray-700 transition duration-300 px-2 py-1  rounded">001</div>
+      </div>
+      <div class="participant flex cursor-pointer bg-gray-800" onclick="showGameLevels(2)" id="participant-2">
+        <div class="name hover:bg-gray-700 transition duration-300 mt-10 md:mt-0 px-2 py-1 rounded">Jane Doe</div>
+        <div class="rollno hover:bg-gray-700 transition duration-300 px-2 py-1 mt-10 md:mt-0 rounded">002</div>
+      </div>
+      <div class="participant flex cursor-pointer bg-gray-800" onclick="showGameLevels(3)" id="participant-3">
+        <div class="name hover:bg-gray-700 transition duration-300 px-2 mt-10 md:mt-0 py-1 rounded">Bob Smith</div>
+      
+        <div class="rollno hover:bg-gray-700 transition duration-300 px-2 py-1 mt-10 md:mt-0 rounded">003</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Game Level Section -->
+  <div class="w-1/2 ml-4">
+    <div id="game-level-section" class="w-full hidden font-mono ">
+      <h2 class="text-2xl font-bold mb-4 text-green-300">Game Levels</h2>
+      <select id="game-level" class="w-full p-2 border rounded mb-4 bg-gray-800 text-green-300">
+        <option value="level-1">Level 1</option>
+        <option value="level-2">Level 2</option>
+        <option value="level-3">Level 3</option>
+        <!-- Add more levels as needed -->
+      </select>
+      <!-- Interaction buttons for participants -->
+      <button onclick="selectParticipant()" class="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-700">Select Participant</button>
+      <button onclick="disqualifyParticipant()" class="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-700">Disqualify Participant</button>
+
+      <!-- Button to generate dummy data -->
+      
+    </div>
+  </div>
+</div>
+    </div>
+  </div>
+
+  <!-- ... (rest of the script) ... -->
+
+  <script>
+    let selectedParticipantId = null;
+
+    // Function to show game levels after clicking on a participant
+    function showGameLevels(participantId) {
+      // Your logic to fetch game levels based on participantId
+      const gameLevels = ["level-1", "level-2", "level-3"]; // Replace with actual game levels
+  
+      // Populate the game levels dropdown
+      const gameLevelDropdown = document.getElementById("game-level");
+      gameLevelDropdown.innerHTML = "";
+      gameLevels.forEach(level => {
+        const option = document.createElement("option");
+        option.value = level;
+        option.text = level;
+        gameLevelDropdown.appendChild(option);
+      });
+  
+      // Show the game level section
+      const gameLevelSection = document.getElementById("game-level-section");
+      gameLevelSection.classList.remove("hidden");
+  
+      // Save the selected participant ID
+      selectedParticipantId = participantId;
+  
+      // Show the interaction buttons
+      const selectParticipantButton = document.querySelector("#game-level-section button:first-child");
+      const disqualifyParticipantButton = document.querySelector("#game-level-section button:last-child");
+      selectParticipantButton.classList.remove("hidden");
+      disqualifyParticipantButton.classList.remove("hidden");
+  
+      // Highlight the selected participant
+      highlightSelectedParticipant();
+    }
+  
+    // Function to highlight the selected participant
+    function highlightSelectedParticipant() {
+      // Remove highlight from all participants
+      const participants = document.querySelectorAll(".participant");
+      participants.forEach(participant => {
+        participant.classList.remove("bg-gray-700");
+      });
+  
+      // Highlight the selected participant
+      const selectedParticipant = document.getElementById(`participant-${selectedParticipantId}`);
+      selectedParticipant.classList.add("bg-gray-700");
+    }
+  
+    // Function to select a participant
+    function selectParticipant() {
+      // Your logic to handle participant selection
+      // For now, simply log the selected participant ID
+      console.log("Selected Participant ID:", selectedParticipantId);
+    }
+  
+    // Function to disqualify a participant
+    function disqualifyParticipant() {
+      // Your logic to handle participant disqualification
+      // For now, simply log the disqualified participant ID
+      console.log("Disqualified Participant ID:", selectedParticipantId);
+    }
+    // Function to update participants count and table based on game selection
+    function updateParticipantsTable() {
+      const gameSelection = document.getElementById("game-selection");
+      const participantsCount = document.getElementById("participants-count");
+      const gameLevelSection = document.getElementById("game-level-section");
+      const selectParticipantButton = document.querySelector("#game-level-section button:first-child");
+      const disqualifyParticipantButton = document.querySelector("#game-level-section button:last-child");
+      const selectedGame = gameSelection.value; // Get the selected game
+
+      // Replace this with your logic to fetch the participants data for the selected game
+      // For now, using sample data, replace with actual logic
+      getParticipantsFromDatabase(selectedGame)
+        .then(participantsData => {
+          // Update participants count
+          participantsCount.textContent = participantsData.length;
+
+          // Show the game level section
+          gameLevelSection.classList.remove("hidden");
+          // Show the interaction buttons
+          selectParticipantButton.classList.remove("hidden");
+          disqualifyParticipantButton.classList.remove("hidden");
+        })
+        .catch(error => {
+          console.error("Error fetching participants:", error);
+        });
+    }
+
+    // ... (rest of the script)
+  </script>
+
+</body>
+</html>

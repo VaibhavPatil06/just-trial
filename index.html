@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+</head>
+
+<body class="w-full bg-black zoom-background ">
+    <div id="audioConfirmation" class="overlay bl">
+        <div class="popup">
+            <div class="popup-content">
+                <p class="popup-title">Do you want to play the welcome audio?</p>
+                <button id="acceptAudio" class="btn-accept">Yes</button>
+                <button id="rejectAudio" class="btn-reject">No</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Welcome Pop-up -->
+
+    <div id="welcomePopup" class="popup hidden ">
+        <div class="popup-content">
+            <p class="popup-title">WELCOME TO THE TECHFEST!</p>
+            <p class="popup-text">Enjoy your stay.</p>
+        </div>
+   
+    </div>
+
+    <!-- Audio Element -->
+    <audio id="welcomeAudio" src="./Project Name.mp3" preload="auto"></audio>
+
+    
+    <div class="-mt-3 scroll-transform rotate-8 scale-130 " id="header" style="background-image: url('./Untitled.png'); height:1100px;">
+        <header>
+            <div class="flex m-3">
+                <a href="./index.html"
+                    class="mt-2 ml-28 sm:ml-2 font-mono font-semibold drop-shadow-md shadow-slate-900 text-2xl text-white">
+                    TECHFEST
+                </a>
+                <div
+                    class="absolute right-10 space-x-0 xl:right-36 xl:mt-3 md:right-36 md:mt-3 lg:space-x-14 mt-14 sm:right-32 sm:mt-2 mr-2">
+                    <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+                    <a href="./games.html"
+                        class="text-gray-300 hover:border-double  hover:border-2 hover:text-white rounded-md px-3 py-2 text-lg font-medium">Games</a>
+                    <a href="./vission.html"
+                        class="text-gray-300 hover:border-double  hover:border-2 hover:text-white rounded-md px-3 py-2 text-lg font-medium">Vision</a>
+                    <a href="#"
+                        class="text-gray-300 hover:border-double  hover:border-2 hover:text-white rounded-md px-3 py-2 text-lg font-medium">Programs</a>
+                </div>
+
+                <button
+                    class="absolute right-5 text-gray-300 mt-2 mr-5  border-double border-2 hover:text-white rounded-md px-3 py-2 text-md font-medium ">
+                    <a href="./login.html"> LOG IN</a>
+                </button>
+            </div>
+        </header>
+        <div class="lg:flex ">
+            <section>
+                <img class="sm:w-52 w-20 lg:w-96 lg:mt-10 sm:mt-36 mt-52 ml-5 drop-shadow-2xl"
+                    src="./vecteezy_ai-generado-pequeno-robots-futurista-maravillas-de_24238434.png" alt="" />
+            </section>
+            <div class="flex flex-col items-center sm:items-start sm:m-10 justify-center">
+                <p
+                    class=" font-bold font-mono drop-shadow-2xl lg:ml-10 lg:mt-5 sm:ml-52 sm:-mt-72 -mt-20 ml-20 sm:text-5xl text-xl lg:text-6xl text-white">
+                    WELCOME TO OUR FEST
+                </p>
+                <p
+                    class="text-md font-light sm:w-4/6 sm:text-xl lg:ml-1 lg:text-2xl sm:mt-5 sm:ml-52 mt-20 text-lg text-center w-80  text-white">
+                    Techfest is a place for tech enthusiasts to share their knowledge
+                    and experience with other tech enthusiasts.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="-mt-96 ml-0 mr-14 sm:mt-52 mb-10 lg:mt-0 block w-full bg-black md:flex" style="height: 610px;">
+        <div class="md:hidden">
+            <div class=" lg:block hidden">
+                <img class="w-4/5 m-5 mr-auto mt-10 "  src="./5467.png" alt="">
+                <p
+                    class="absolute sm:text-2xl lg:-mt-96 lg:ml-60 sm:mt-10 sm:ml-48 transform -translate-x-1/2 -translate-y-1/2 text-white">
+                    Lets Make Your Skills Future</p>
+                <p
+                    class="absolute sm:text-sm  sm:mt-24 lg:-mt-80 lg:ml-72 sm:w-96 sm:ml-60 transform -translate-x-1/2 -translate-y-1/2 text-white">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Labore et fugiat nisi delectus quibusdam
+                    animi, soluta assumenda inventore ea nam.</p>
+            </div>
+            <div class="sm:flex block lg:mr-10  " style=" @media (max-width:600px){margin-left :5% ;}">
+                <div class="-mt-32 sm:ml-5 ml-10  sm:w-80  rounded-lg h-72 w-72  lg:w-52 lg:ml-32 bg-gray-900">
+                    <div>
+                        <img src="./hacker.png" alt="" style="height: 60px; margin:25px 0px 0px 10px;">
+                        <p class="text-xl text-indigo-400 mt-10 ml-5">Programming</p>
+                        <p class="text-sm text-gray-400 mt-1 ml-5">Lorem, ipsum dolor sit amet consectetur adipisicing
+                            elit. Quae, nemo? </p>
+                        <hr class="w-32 mt-8 ml-7">
+                    </div>
+                    <div
+                        class="mt-32 ml-0 rounded-lg sm:-mt-56 sm:w-80 sm:ml-96 lg:ml-56 lg:-mt-10 h-72 lg:w-52 w-72 bg-gray-900">
+                        <div class="pt-7 pl-5">
+                            <img class="space-y-10" src="./ai.png" alt="" style="height: 50px; ">
+                            <p class="text-xl text-indigo-400 mt-10 ">Brain Skills</p>
+                            <p class="text-sm text-gray-400 mt-1 ">Lorem, ipsum dolor sit amet consectetur adipisicing
+                                elit. Quae, nemo? </p>
+                            <hr class="w-32 mt-8 ml-2">
+                        </div>
+
+                    </div>
+                </div>
+                <div class="block sm:flex">
+                    <div
+                        class="mt-96 ml-10 sm:mt-60 sm:-ml-80 sm:w-80  h-72 w-72 lg:w-52 lg:-ml-52 lg:mt-44 rounded-lg bg-gray-900">
+                        <div class="pt-7 pl-5">
+                            <img class="space-y-10" src="./cpu.png" alt="" style="height: 50px; ">
+                            <p class="text-xl text-indigo-400 mt-10 ">Technology</p>
+                            <p class="text-sm text-gray-400 mt-1 ">Lorem, ipsum dolor sit amet consectetur adipisicing
+                                elit. Quae, nemo? </p>
+                            <hr class="w-32 mt-8 ml-2">
+                        </div>
+
+                    </div>
+                    <div class="mt-10 ml-10 sm:mt-60 sm:ml-16 sm:w-80 rounded-lg h-72 w-72 lg:w-52 lg:mt-96 lg:ml-5 bg-gray-900">
+                        <div class="pt-7  pl-5">
+                            <img class="space-y-10" src="./project-management.png" alt="" style="height: 50px; ">
+                            <p class="text-xl text-indigo-400 mt-10 ">Problem Solving Skills</p>
+                            <p class="text-sm text-gray-400 mt-1 ">Lorem, ipsum dolor sit amet consectetur adipisicing
+                                elit. Quae, nemo? </p>
+                            <hr class="w-32 mt-2 ml-2">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mt-96 lg:-mt-20 ml-14 mr-14 mb-10 hidden bg-black lg:flex border border-white">
+            <div class=" lg:block ">
+                <img class="w-4/5 m-5 mr-auto mt-10" src="./5467.png" alt="">
+                <p
+                    class="absolute sm:text-2xl lg:-mt-96 lg:ml-60 sm:mt-10 sm:ml-48 transform -translate-x-1/2 -translate-y-1/2 text-white">
+                    Lets Make Your Skills Future</p>
+                <p
+                    class="absolute sm:text-sm  sm:mt-24 lg:-mt-80 lg:ml-72 sm:w-96 sm:ml-60 transform -translate-x-1/2 -translate-y-1/2 text-white">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Labore et fugiat nisi delectus quibusdam
+                    animi, soluta assumenda inventore ea nam.</p>
+            </div>
+            <div class="sm:flex block lg:mr-10" style=" @media (max-width:600px){margin-left :5% ;}">
+                <div class="-mt-32 sm:ml-10 ml-10 sm:w-80 lg:-mt-20 rounded-lg h-72 w-72 lg:w-52 lg:ml-32 bg-gray-900">
+                    <div>
+                        <img src="./hacker.png" alt="" style="height: 60px; margin:25px 0px 0px 10px;">
+                        <p class="text-xl text-indigo-400 mt-10 ml-5">Programming</p>
+                        <p class="text-sm text-gray-400 mt-1 ml-5">Lorem, ipsum dolor sit amet consectetur adipisicing
+                            elit. Quae, nemo? </p>
+                        <hr class="w-32 mt-8 ml-7">
+                    </div>
+                    <div
+                        class="mt-32 ml-0 rounded-lg sm:-mt-56 sm:w-80 sm:ml-96 lg:ml-56 lg:-mt-24 h-72 lg:w-52 w-72 bg-gray-900">
+                        <div class="pt-7 pl-5">
+                            <img class="space-y-10" src="./ai.png" alt="" style="height: 50px; ">
+                            <p class="text-xl text-indigo-400 mt-10 ">Brain Skills</p>
+                            <p class="text-sm text-gray-400 mt-1 ">Lorem, ipsum dolor sit amet consectetur adipisicing
+                                elit. Quae, nemo? </p>
+                            <hr class="w-32 mt-8 ml-2">
+                        </div>
+
+                    </div>
+                </div>
+                <div class="block sm:flex">
+                    <div
+                        class="mt-96 ml-10 sm:mt-60 sm:-ml-40 sm:w-80  h-72 w-72 lg:w-52 lg:-ml-52 lg:mt-56 rounded-lg bg-gray-900">
+                        <div class="pt-7 pl-5">
+                            <img class="space-y-10" src="./cpu.png" alt="" style="height: 50px; ">
+                            <p class="text-xl text-indigo-400 mt-10 ">Technology</p>
+                            <p class="text-sm text-gray-400 mt-1 ">Lorem, ipsum dolor sit amet consectetur adipisicing
+                                elit. Quae, nemo? </p>
+                            <hr class="w-32 mt-8 ml-2">
+                        </div>
+
+                    </div>
+                    <div class="mt-10 ml-10 rounded-lg h-72 w-72 lg:w-52 lg:mt-96 lg:ml-5 bg-gray-900">
+                        <div class="pt-7  pl-5">
+                            <img class="space-y-10" src="./project-management.png" alt="" style="height: 50px; ">
+                            <p class="text-xl text-indigo-400 mt-10 ">Problem Solving Skills</p>
+                            <p class="text-sm text-gray-400 mt-1 ">Lorem, ipsum dolor sit amet consectetur adipisicing
+                                elit. Quae, nemo? </p>
+                            <hr class="w-32 mt-2 ml-2">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-96 ml-14 mr-14 mb-10 hidden bg-black lg:mt-0 lg:flex border border-white">
+        <div>
+            <img class="hidden lg:block w-4/5 mt-5 ml-5" src="./12.png" alt="">
+            <p class="absolute hidden text-4xl ml-80 mt-96 transform -translate-x-1/2 -translate-y-1/2 text-white">Lets
+                Make Your Skills Future</p>
+            <p class="absolute hidden text-lg w-96 ml-72 mt-72 transform -translate-x-1/2 -translate-y-1/2 text-white">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Labore et fugiat nisi delectus quibusdam
+                animi, soluta assumenda inventore ea nam.</p>
+        </div>
+        <div>
+            <p class="text-slate-500 ml-36 hidden lg:flex mt-96 lg:mt-10 text-sm  text-wrap w-80">
+                I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or
+                double click me to add your own content and make changes to the font. Feel free to drag and drop me
+                anywhere you like on your page. I’m a great place for you to tell a story and let your users know a
+                little more about you.</p>
+
+            <p class="text-slate-500 ml-36 mt-5 hidden lg:flex text-wrap w-80">
+                This is a great space to write a long text about your company and your services. You can use this space
+                to go into a little more detail about your company. Talk about your team and what services you provide.
+                Tell your visitors the story of how you came up with the idea for your business and what makes you
+                different from your competitors. Make your company stand out and show your visitors who you are</p>
+            <button
+                class="lg:text-slate-300 hidden lg:flex  bg-red-500 ml-36 mt-5 lg:pl-8 lg:pt-3 text-wrap w-40 h-12 rounded-md">Learn
+                More</button>
+        </div>
+    </div>
+
+    <div>
+        <img class="md:hidden sm:mt-28" src=".//ezgif.com-speed.gif" alt="" style="margin-top:700px">
+        <p class="absolute text-xl md:hidden ml-48 -mt-56 sm:-mt-96 sm:text-3xl sm:ml-96 transform -translate-x-1/2 -translate-y-1/2 text-white">Are
+            Your Ready ?</p>
+    </div>
+    <div class="justify-center">
+        <p class="text-slate-500 md:hidden text-center p-2 text-md  sm:w-9/12 sm:ml-20 text-wrap ">
+
+            I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double
+            click me to add your own content and make changes to the font.</p>
+            <button class="text-slate-300 md:hidden bg-red-500 ml-9 mt-5 sm:ml-72 sm:mb-10 text-center text-wrap w-40 h-12 rounded-md">Get
+                Started </button>
+    </div>
+
+    <div class="mt-96 ml-14 mr-14 mb-10 hidden bg-black lg:mt-0 lg:flex border border-white">
+        <div>
+            <img class="w-full border-r border-white mr-20" src=".//ezgif.com-speed.gif" alt="">
+            <p class="absolute text-4xl ml-64 -mt-72 transform -translate-x-1/2 -translate-y-1/2 text-white">Are Your
+                Ready ?</p>
+        </div>
+        <div>
+            <p class="text-slate-500 text-center p-2 text-md mt-44 w-2/5 ml-72 text-wrap ">
+
+                I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or
+                double click me to add your own content and make changes to the font.
+                <button class="text-slate-300 bg-red-500 ml-1 mt-5 text-center text-wrap w-40 h-12 rounded-md">Get
+                    Started </button>
+        </div>
+    </div>
+    <hr>
+
+    <footer class="h-96 flex-wrap lg:flex ">
+        <div class="flex-wrap mt-20 ml-5 xl:ml-20 sm:ml-10">
+            <p class="text-white text-xl sm:text-3xl lg:text-4xl font-mono">TECHFEST</p>
+            <p class="text-gray-500 mt-5">+91 00000 00000</p>
+            <p class="text-gray-500">XYZ@gmail.com </p>
+            <p class="text-gray-500">KBP College </p>
+            <p class="text-gray-500">Vashi , Navi-Mumbai</p>
+        </div>
+        <div class="-mt-36 ml-60 lg:mt-20 xl:ml-52 lg:ml-44 sm:ml-80 block ">
+            <a href="#"
+                class="text-gray-500 hover:border-double  hover:border-2 hover:text-white rounded-md px-3 py-2 text-lg font-medium">Games</a>
+            <br> <br> <a href="./vission.html"
+                class="text-gray-500  hover:border-double  hover:border-2 hover:text-white rounded-md px-3 py-2 text-lg font-medium">Vision</a>
+            <br> <br><a href="#"
+                class="text-gray-500 hover:border-double  hover:border-2 hover:text-white rounded-md px-3 py-2 text-lg font-medium">Programs</a>
+            <br> <button
+                class="absolute  text-gray-500 mt-5 ml-3 border-gray-500 border-double border-2 hover:text-gray-200 rounded-md px-3 py-2 w-20 text-md font-medium"><a
+                    href="./login.html"> Login</a></button>
+
+        </div>
+        <div class="mt-28 ml-5 sm:ml-96 sm:-mt-36 sm:pl-28 lg:mt-16 xl:ml-28 lg:ml-14">
+            <p class="text-gray-500 mt-5">To Contact Us Send Your Email :</p>
+            <input
+                class="text-gray-500 mt-5  h-12 w-64 bg-black border-gray-500 border-double border-2 hover:text-gray-200 rounded-md px-3 py-2 text-md font-medium"
+                type="email" name="Email" id="Email" placeholder="Email"><br>
+            <button
+                class="absolute  text-gray-500 mt-5 w-28 h-12 border-gray-500 border-double border-2 hover:border-gray-200 hover:text-gray-200 rounded-md px-3 py-2 text-md font-medium">Submit</button>
+        </div>
+        <div class="mt-28 ml-20 flex sm:mt-32 sm:ml-72 sm:flex lg:mt-16 lg:block  lg:ml-40  xl:ml-56  ">
+            <p class="text-gray-500 mt-5 mb-10 sm:pr-4 sm:text-xl mr-3">Follw Us On :</p>
+            <div class="flex space-x-3 mb-10 mt-5">
+                <img src="./facebook.png" alt="" style="height: 30px; ">
+                <img src="./instagram.png" alt="" style="height: 33px;">
+                <img src="./twitter.png" alt="" style="height: 32px;">
+            </div>
+        </div>
+    </footer>
+    <script>
+        document.getElementById('acceptAudio').addEventListener('click', function () {
+            // Blur the background elements
+            document.body.classList.add('blurred');
+        
+            // Show the welcome pop-up
+            document.getElementById('welcomePopup').classList.remove('hidden');
+            document.getElementById('audioConfirmation').classList.add('hidden');
+        
+            // Play the audio
+            document.getElementById('welcomeAudio').play();
+        
+            // Automatically close the welcome pop-up after 2 seconds
+            setTimeout(function () {
+                // Remove the blur effect
+                document.body.classList.remove('blurred');
+        
+                // Hide the welcome pop-up
+                document.getElementById('welcomePopup').classList.add('hidden');
+            }, 3000);
+        });
+        
+        document.getElementById('rejectAudio').addEventListener('click', function () {
+            // Handle rejection if needed
+            document.getElementById('audioConfirmation').classList.add('hidden');
+            document.getElementById('welcomePopup').classList.remove('hidden');
+            setTimeout(function () {
+                // Remove the blur effect
+                document.body.classList.remove('blurred');
+        
+                // Hide the welcome pop-up
+                document.getElementById('welcomePopup').classList.add('hidden');
+            }, 3000);
+        });
+        
+        // Set the fixed zoom percentage (e.g., 2%)
+        var zoomPercentage = 2;
+
+        window.addEventListener('scroll', function () {
+            // Calculate the scale factor based on the fixed percentage
+            var scaleFactor = 1 + (window.scrollY * zoomPercentage / 1000);
+
+            // Apply the background-size to the 'zoom-element' container
+            document.querySelectorAll('.zoom-element').forEach(function (element) {
+                element.style.backgroundSize = 'calc(100% + ' + window.scrollY + 'px)';
+            });
+        });
+    </script>
+
+
+
+
+
+</body>
+
+</html>

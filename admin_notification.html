@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hacker Admin Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-900 text-white font-mono">
+
+  <!-- Navigation (Top Bar for Small Screens) -->
+  <div id="top-nav" class="md:hidden bg-gray-800 text-white p-4">
+    <div class="flex justify-between items-center">
+      <div>Admin Dashboard</div>
+      <div id="open-slide-bar" class="cursor-pointer text-2xl" onclick="toggleSlideBar()">&#9776;</div>
+    </div>
+    <!-- Dropdown menu for small screens -->
+    <div id="dropdown-menu" class="hidden mt-2">
+      <a href="./admin_profile.html" onclick="scrollToSection('profile-panel')" class="block px-4 py-2 hover:bg-gray-700">Dashboard</a>
+      <a href="#notifications" onclick="scrollToSection('notification-panel')" class="block px-4 py-2 hover:bg-gray-700">Notifications</a>
+      <a href="./admin_game.html" onclick="scrollToSection('game-panel')" class="block px-4 py-2 hover:bg-gray-700">Games</a>
+      <!-- Add links for other sections -->
+      <a href="./admin_setting.html" class="block px-4 py-2 hover:bg-gray-700">Settings</a>
+      <a href="./index.html" class="block px-4 py-2 hover:bg-gray-700">Logout</a>
+    </div>
+  </div>
+
+  <!-- Slide Bar (Sidebar for Larger Screens) -->
+  <div id="slide-bar" class="hidden md:block bg-gray-800 text-white h-screen w-64 fixed top-0 left-0 overflow-x-hidden transform -translate-x-full md:translate-x-0 transition-transform">
+    <a href="./admin_profile.html" onclick="scrollToSection('profile-panel')" class="block px-4 py-2 mt-4 hover:bg-gray-700">Dashboard</a>
+    <a href="#notifications" onclick="scrollToSection('notification-panel')" class="block px-4 py-2 hover:bg-gray-700">Notifications</a>
+    <a href="./admin_game.html" onclick="scrollToSection('game-panel')" class="block px-4 py-2 hover:bg-gray-700">Games</a>
+    <!-- Add links for other sections -->
+    <a href="./admin_setting.html" class="block px-4 py-2 hover:bg-gray-700">Settings</a>
+    <a href="./index.html" class="block px-4 py-2 hover:bg-gray-700">Logout</a>
+  </div>
+
+  <div id="main-content" class="md:ml-64 transition-transform transform">
+    <!-- Notification Panel -->
+    <div id="notification-panel" class="p-4 bg-gray-800 border border-gray-700 rounded">
+      <h2 class="text-2xl font-bold mb-4">Notifications</h2>
+
+      <!-- New Notification Form -->
+      <form id="notification-form" class="mb-4">
+        <label for="notification-text" class="block text-sm font-medium text-gray-400">New Notification:</label>
+        <textarea id="notification-text" name="notification-text" rows="3" class="mt-1 p-2 w-full bg-gray-700 border border-gray-600 rounded-md text-gray-300"></textarea>
+        <button type="button" onclick="addNotification()" class="mt-2 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700">Add Notification</button>
+      </form>
+
+      <!-- Previous Notifications -->
+      <div id="notifications-list" class="border rounded p-4 bg-gray-700 border-gray-600">
+        <h3 class="text-xl font-bold mb-2 text-gray-400">Previous Notifications:</h3>
+        <!-- Notification items will be added dynamically here -->
+      </div>
+
+      <!-- Button to generate dummy notification data -->
+      <button onclick="generateDummyNotifications()" class="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700">Generate Dummy Notifications</button>
+    </div>
+
+    <!-- ... (rest of the code) ... -->
+
+  </div>
+
+  <script>
+    // Function to add a new notification
+    function addNotification() {
+      const notificationText = document.getElementById("notification-text").value;
+      if (notificationText.trim() !== "") {
+        // Create a new notification item
+        const notificationItem = document.createElement("div");
+        notificationItem.classList.add("mb-2", "text-gray-300");
+        notificationItem.textContent = notificationText;
+
+        // Append the notification item to the list
+        const notificationsList = document.getElementById("notifications-list");
+        notificationsList.appendChild(notificationItem);
+
+        // Clear the input field
+        document.getElementById("notification-text").value = "";
+      }
+    }
+
+    // Function to generate dummy notification data
+    function generateDummyNotifications() {
+      const dummyNotifications = [
+        "This is a sample notification.",
+        "Another notification for testing purposes.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      ];
+
+      // Clear existing notifications
+      const notificationsList = document.getElementById("notifications-list");
+      notificationsList.innerHTML = "";
+
+      // Add dummy notifications
+      dummyNotifications.forEach(notificationText => {
+        const notificationItem = document.createElement("div");
+        notificationItem.classList.add("mb-2", "text-gray-300");
+        notificationItem.textContent = notificationText;
+        notificationsList.appendChild(notificationItem);
+      });
+    }
+
+    // ... (rest of the script)
+  </script>
+
+</body>
+</html>
